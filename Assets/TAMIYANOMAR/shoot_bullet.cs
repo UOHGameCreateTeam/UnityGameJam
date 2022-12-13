@@ -7,7 +7,7 @@ public class shoot_bullet : MonoBehaviour
     public GameObject bullet;
     public GameObject muzzle;
     private float bullet_speed = 10f;
-    private float time = 0f;
+    private float time = -1f;
     private float move_speed = 3f;
 
     private float way = 0;
