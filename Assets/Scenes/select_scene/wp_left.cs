@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class left_ar : MonoBehaviour
+public class wp_left : MonoBehaviour
 {
-    // Start is called before the first frame update
     private int tmp = 0;
-    public void OnClisk()
+    // Start is called before the first frame update
+    public void OnClick()
     {
         print("left");
         change();
@@ -17,13 +16,13 @@ public class left_ar : MonoBehaviour
     {
         //int tmp = 0;
 
- 
-        tmp = stage_dummy.play_stage;
-        if(tmp >= 0)
+
+        tmp = weapon_dummy.use_weapon;
+        if (tmp >= 0)
         {
-            stage_dummy.play_stage -= 1;
+            weapon_dummy.use_weapon -= 1;
         }
 
-        
+
     }
 }

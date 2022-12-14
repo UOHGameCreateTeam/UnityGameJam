@@ -9,23 +9,19 @@ public class stage_select : MonoBehaviour
     // Start is called before the first frame update
     private int tmp = 0;
 
-    public TextMeshProUGUI now_weapon;
+    public TextMeshProUGUI now_stage;
 
     void Start()
     {
-        now_weapon = GetComponent<TextMeshProUGUI>();
+        now_stage = GetComponent<TextMeshProUGUI>();
     }
 
     void Update()
     {
         int wp_count = 0;
-        //nullが代入されてるから治す
         string show_text;
 
-        dummy_obj dummy;
-        GameObject obj = GameObject.Find("GameObject");
-        dummy = obj.GetComponent<dummy_obj>();
-        wp_count = dummy.now;
+        wp_count = stage_dummy.play_stage;
 
         show_text = string.Format("{0}", wp_count);
         //Debug.Log(wp_count);
@@ -36,7 +32,7 @@ public class stage_select : MonoBehaviour
             show_text = "チュートリアル";
         }
 
-        now_weapon.text = show_text;
+        now_stage.text = show_text;
 
     }
 }

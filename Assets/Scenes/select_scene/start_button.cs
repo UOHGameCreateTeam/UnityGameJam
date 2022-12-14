@@ -12,10 +12,9 @@ public class start_button : MonoBehaviour
         int tmp = 0;
         string stage = "stage_";
 
-        dummy_obj dummy;
-        GameObject obj = GameObject.Find("GameObject");
-        dummy = obj.GetComponent<dummy_obj>();
-        tmp = dummy.now;
+        stage_dummy dummy;
+
+        tmp = stage_dummy.play_stage;
 
         if(tmp == 0)
         {
@@ -23,7 +22,7 @@ public class start_button : MonoBehaviour
         }
         else
         {
-            stage += string.Format("{0}", tmp);
+            stage += string.Format("{0}", 1);
         }
 
         SceneManager.LoadScene(stage);

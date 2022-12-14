@@ -16,13 +16,12 @@ public class right_ar : MonoBehaviour
     public void change()
     {
         //int tmp = 0;
-        dummy_obj dummy;
-        GameObject obj = GameObject.Find("GameObject");
-        dummy = obj.GetComponent<dummy_obj>();
-        tmp = dummy.now;
+        stage_dummy dummy;
+
+        tmp = stage_dummy.play_stage;
         if(tmp < 5)
         {
-            dummy.now += 1;
+            stage_dummy.play_stage += 1;
         }
 
     }
