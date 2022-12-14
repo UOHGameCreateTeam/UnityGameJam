@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class left_sc : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] Text CountText;
     private int tmp = 0;
     public void OnClisk()
     {
