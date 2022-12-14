@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class hpmanager : MonoBehaviour
+public class energy_text : MonoBehaviour
 {
     public GameObject Player;
     player_status script;
-    public TMP_Text hpText;
+    public TMP_Text energyText;
     private string name_player = "Player";
     private string name_hptext = "hpText";
     // Start is called before the first frame update
@@ -25,12 +25,12 @@ public class hpmanager : MonoBehaviour
             Debug.Log($"{name_player} has null player"); // <- ゲームオブジェクトの名前を記録する。
             return; // <- この関数を終了します。
         }
-        if (hpText == null)
+        if (energyText == null)
         {
             Debug.Log($"{name_hptext} has null ui"); // <- ゲームオブジェクトの名前を記録する。
             return; // <- この関数を終了します。
         }
-        hpText.text = script.hp.ToString();
+        energyText.text = script.energy.ToString();
 
     }
 }
