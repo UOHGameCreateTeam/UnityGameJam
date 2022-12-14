@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class left_sc : MonoBehaviour
+public class left_ar : MonoBehaviour
 {
     // Start is called before the first frame update
     private int tmp = 0;
@@ -16,9 +16,9 @@ public class left_sc : MonoBehaviour
     public void change()
     {
         //int tmp = 0;
-        dummy_cs dummy;
+        dummy_obj dummy;
         GameObject obj = GameObject.Find("GameObject");
-        dummy = obj.GetComponent<dummy_cs>();
+        dummy = obj.GetComponent<dummy_obj>();
         tmp = dummy.now;
         if(tmp >= 0)
         {

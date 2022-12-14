@@ -10,9 +10,6 @@ public class button_sc : MonoBehaviour
     public void OnClisk()
     {
 
-        print("cahnge");
-        Debug.Log("ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚Ü‚µ‚½I");
-            // SampleScene‚ÉØ‚è‘Ö‚¦‚é
         SceneManager.LoadScene("select_scene");
       
     }
