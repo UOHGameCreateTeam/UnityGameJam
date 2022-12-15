@@ -13,9 +13,15 @@ public class energy_gage : MonoBehaviour
     }
      void Update()
     {
-        if(slider.value <= 100)
+        float tmp;
+        tmp = timer_control.Get_Timer();
+        if (tmp >= 0)
         {
-            slider.value += 0.01f;
+
+            if (slider.value <= 100)
+            {
+                slider.value += 0.01f;
+            }
         }
     }
 

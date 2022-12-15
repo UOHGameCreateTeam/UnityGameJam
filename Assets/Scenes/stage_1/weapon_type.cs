@@ -15,7 +15,6 @@ public class weapon_type : MonoBehaviour
 
         weapon_dummy dum_1 = new weapon_dummy();
         tmp = dum_1.GetSetProperty;
-        Debug.Log(tmp);
 
         show_text = string.Format("{0}", tmp);
         weapon.text = show_text;
@@ -28,7 +27,6 @@ public class weapon_type : MonoBehaviour
 
         weapon_dummy dum_1 = new weapon_dummy();
         tmp = dum_1.GetSetProperty;
-        Debug.Log(tmp);
 
         show_text = string.Format("{0}", tmp);
         weapon.text = show_text;

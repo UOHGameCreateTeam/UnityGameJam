@@ -8,7 +8,7 @@ public class timer_control : MonoBehaviour
     public static float current_time;
     void Start()
     {
-        current_time = -3f;
+        current_time = -4f;
     }
 
     // Update is called once per frame
@@ -20,9 +20,8 @@ public class timer_control : MonoBehaviour
         current_time += delta_time;
 
     }
-    public float GetSetProperty
+    public static float Get_Timer()
     {
-        get { return current_time; }
-        set { current_time = value; }
+        return current_time;
     }
 }
