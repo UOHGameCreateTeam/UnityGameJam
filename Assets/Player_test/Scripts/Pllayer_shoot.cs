@@ -10,12 +10,15 @@ public class Pllayer_shoot : MonoBehaviour
     public float bullet_speed = 3f;
     public float beem_speed = 3f;
     public float angle = 0f;
-    public GameObject Player;
+    private GameObject Player;
     player_status script;
+    public float bullet_sense = 0f;
+    private float time = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        time = bullet_sense;
         Player = GameObject.Find("Player"); //Playerをオブジェクトの名前から取得して変数に格納する
         script = Player.GetComponent<player_status>();
     }
@@ -28,6 +31,8 @@ public class Pllayer_shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         if (Input.GetKey(KeyCode.C))
         {
             Debug.Log($"{transform.rotation}");
@@ -50,8 +55,14 @@ public class Pllayer_shoot : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Z))
         {
-            GameObject new_bullet = Instantiate(player_bullet, player.transform.position, transform.rotation);
-            new_bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, bullet_speed);
+            if (time >= bullet_sense)
+            {
+                GameObject new_bullet = Instantiate(player_bullet, player.transform.position, transform.rotation);
+                new_bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, bullet_speed);
+                time = 0f;
+            }
+
         }
+        time += Time.deltaTime;
     }
 }

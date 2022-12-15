@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4835004398323869272}
   m_Layer: 0
   m_Name: Player_bullet
-  m_TagString: Player
+  m_TagString: Player_bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc91ef50a7fc9914f939c2314ea79baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
 --- !u!50 &532507647459268388
 Rigidbody2D:
   serializedVersion: 4

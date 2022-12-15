@@ -258,6 +258,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61271819}
   m_CullTransparentMesh: 1
+--- !u!1 &426923492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 426923493}
+  m_Layer: 0
+  m_Name: muzzle (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &426923493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426923492}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.623, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1641391467}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &523700108
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,8 +303,8 @@ GameObject:
   - component: {fileID: 523700117}
   - component: {fileID: 523700116}
   - component: {fileID: 523700114}
+  - component: {fileID: 523700118}
   - component: {fileID: 523700113}
-  - component: {fileID: 523700115}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -386,7 +417,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 0.3987121}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!50 &523700114
 Rigidbody2D:
@@ -409,21 +440,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &523700115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 523700108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76ccfd13f950af242a4d1271e4cc8c24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 500
-  energy: 0
-  max_energy: 100
 --- !u!114 &523700116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,7 +471,23 @@ MonoBehaviour:
   bullet_speed: 10
   beem_speed: 30
   angle: 50
-  Player: {fileID: 0}
+  bullet_sense: 0.1
+--- !u!114 &523700118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523700108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a640f695ab105994fa8c8d5e952a8372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 500
+  energy: 0
+  max_energy: 1000
+  max_hp: 500
 --- !u!1 &1295991479
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,11 +590,21 @@ GameObject:
   m_Component:
   - component: {fileID: 1641391467}
   - component: {fileID: 1641391466}
+  - component: {fileID: 1641391476}
   - component: {fileID: 1641391465}
   - component: {fileID: 1641391472}
+  - component: {fileID: 1641391475}
   - component: {fileID: 1641391471}
+  - component: {fileID: 1641391474}
+  - component: {fileID: 1641391478}
+  - component: {fileID: 1641391477}
+  - component: {fileID: 1641391473}
   - component: {fileID: 1641391469}
   - component: {fileID: 1641391468}
+  - component: {fileID: 1641391482}
+  - component: {fileID: 1641391481}
+  - component: {fileID: 1641391480}
+  - component: {fileID: 1641391479}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -644,11 +686,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641391464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.11, y: 3.07, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.07, y: 3.15, z: 0}
+  m_LocalScale: {x: 12.2648, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1295991480}
+  - {fileID: 426923493}
+  - {fileID: 1711069169}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -697,7 +741,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.6272731}
+  m_Size: {x: 1.3, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1641391471
 MonoBehaviour:
@@ -713,6 +757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5743124787871638257, guid: 147132da288165a40822006951c5b95d, type: 3}
   muzzle: {fileID: 1295991479}
+  bullet_timer: 0.5
 --- !u!114 &1641391472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -725,7 +770,226 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba67a120b20e7ca4083ec28c5a4bf764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 500
+  hp: 5000
+--- !u!114 &1641391473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641391464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1dd991baaebff42bc36ad0c75c3bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 1641391464}
+  bullet3: {fileID: 253300621654522882, guid: 9daa4707ac480e34c843ea5750f18d4b, type: 3}
+  muzzle: {fileID: 1295991479}
+  bullet_speed: 1
+  bullet_timer: 0.2
+  angle_change: 240
+  min_angle: 240
+  max_angle: 300
+  count: 5
+--- !u!114 &1641391474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641391464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1dd991baaebff42bc36ad0c75c3bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 1641391464}
+  bullet3: {fileID: 253300621654522882, guid: 9daa4707ac480e34c843ea5750f18d4b, type: 3}
+  muzzle: {fileID: 1295991479}
+  bullet_speed: 10
+  bullet_timer: 0.5
+  angle_change: 220
+  min_angle: 220
+  max_angle: 320
+  count: 3
+--- !u!114 &1641391475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641391464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b2ff5e0ab24ab4e96479b05e46adf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move_speed: 5
+  min_range: -3
+  max_range: 3
+--- !u!114 &1641391476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641391464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5451f7539b05dcf44ae3b8445c10412a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet1: {fileID: 4102509326472551808, guid: a9590ccce5c7e114a9d2fd264a2fdce0, type: 3}
+  muzzle: {fileID: 1295991479}
+  bullet_speed: 2
+  player_name: Player
+  bullet_timer: 0.3
+--- !u!114 &1641391477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641391464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15be3930ba5ebd548b5d4bd4443deb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 5743124787871638257, guid: 147132da288165a40822006951c5b95d, type: 3}
+  muzzle: {fileID: 1711069168}
+  bullet_timer: 0.5
+--- !u!114 &1641391478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641391464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15be3930ba5ebd548b5d4bd4443deb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 5743124787871638257, guid: 147132da288165a40822006951c5b95d, type: 3}
+  muzzle: {fileID: 426923492}
+  bullet_timer: 0.5
+--- !u!114 &1641391479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641391464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1dd991baaebff42bc36ad0c75c3bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 1641391464}
+  bullet3: {fileID: 253300621654522882, guid: 9daa4707ac480e34c843ea5750f18d4b, type: 3}
+  muzzle: {fileID: 1295991479}
+  bullet_speed: 1
+  bullet_timer: 0.2
+  angle_change: 240
+  min_angle: 240
+  max_angle: 300
+  count: 5
+--- !u!114 &1641391480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641391464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1dd991baaebff42bc36ad0c75c3bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 1641391464}
+  bullet3: {fileID: 253300621654522882, guid: 9daa4707ac480e34c843ea5750f18d4b, type: 3}
+  muzzle: {fileID: 1295991479}
+  bullet_speed: 1
+  bullet_timer: 0.2
+  angle_change: 240
+  min_angle: 240
+  max_angle: 300
+  count: 5
+--- !u!114 &1641391481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641391464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1dd991baaebff42bc36ad0c75c3bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 1641391464}
+  bullet3: {fileID: 253300621654522882, guid: 9daa4707ac480e34c843ea5750f18d4b, type: 3}
+  muzzle: {fileID: 1295991479}
+  bullet_speed: 10
+  bullet_timer: 0.5
+  angle_change: 220
+  min_angle: 220
+  max_angle: 320
+  count: 3
+--- !u!114 &1641391482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641391464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1dd991baaebff42bc36ad0c75c3bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 1641391464}
+  bullet3: {fileID: 253300621654522882, guid: 9daa4707ac480e34c843ea5750f18d4b, type: 3}
+  muzzle: {fileID: 1295991479}
+  bullet_speed: 10
+  bullet_timer: 0.5
+  angle_change: 220
+  min_angle: 220
+  max_angle: 320
+  count: 3
+--- !u!1 &1711069168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1711069169}
+  m_Layer: 0
+  m_Name: muzzle (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1711069169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711069168}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.573, y: -0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1641391467}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1787903354
 GameObject:
   m_ObjectHideFlags: 0

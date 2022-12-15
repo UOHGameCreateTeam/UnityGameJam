@@ -17,7 +17,19 @@ public class player_status : MonoBehaviour, IDamagable
         }
         else
         {
-            energy += damage;
+            if (hp <= max_hp / 3 * 2)
+            {
+                energy += damage * 4;
+            }
+            else if (hp <= max_hp / 3)
+            {
+                energy += damage * 8;
+            }
+            else
+            {
+                energy += damage;
+            }
+            
         }
         Debug.Log("add: " + damage + "energy: " + energy);
 

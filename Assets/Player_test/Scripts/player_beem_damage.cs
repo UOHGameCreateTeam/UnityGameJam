@@ -8,7 +8,7 @@ public class player_beem_damage : MonoBehaviour
     {
     }
     // Update is called once per frame
-    private int damage = 1000;
+    public int damage = 1000;
     void Update()
     {
         // 5•bŒã‚É©•ª‚ğíœ

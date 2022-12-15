@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class player_bullet_damage : MonoBehaviour
 {
-    public GameObject Player;
+    private GameObject Player;
     player_status script;
     private void Start()
     {
@@ -12,7 +12,7 @@ public class player_bullet_damage : MonoBehaviour
         script = Player.GetComponent<player_status>();
     }
     // Update is called once per frame
-    private int damage = 10;
+    public int damage = 1;
     void Update()
     {
         // 5•bŒã‚É©•ª‚ğíœ
@@ -39,8 +39,8 @@ public class player_bullet_damage : MonoBehaviour
                     script.hp += damage;
 
                 }
-               
 
+                Destroy(this.gameObject);
 
             }
         }
