@@ -9,18 +9,25 @@ public class look_at_and_go : MonoBehaviour
     private GameObject player_obj;
     public string player_name = "Player";
     private float bullet_speed = 50;
-    public GameObject look_at;
-    private Transform look_at_transform;
     private float angle_gap = 0f;
-    // Start is called before the first frame update
+ 
     void Start()
     {
         player_obj = GameObject.Find(player_name);
 
         float gap_x = player_obj.transform.position.x - this.transform.position.x;
+        Debug.Log(gap_x);
         float gap_y = player_obj.transform.position.y - this.transform.position.y;
+        Debug.Log(gap_y);
 
-        angle_gap =  -1 * Mathf.Atan( gap_x / gap_y) * 180;
+        if (gap_x < 0)
+        {
+            angle_gap = Mathf.Rad2Deg * Mathf.Atan(Mathf.Abs(gap_y)/ Mathf.Abs(gap_x));
+        }
+        else
+        {
+            angle_gap = 180 - Mathf.Rad2Deg * Mathf.Atan(-1*gap_y/gap_x);
+        }
         Debug.Log(angle_gap);
     }
 

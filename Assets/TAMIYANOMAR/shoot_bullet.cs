@@ -18,7 +18,7 @@ public class shoot_bullet : MonoBehaviour
         {
             time = 0f;
             GameObject new_bullet = Instantiate(bullet,muzzle.transform.position , transform.rotation);
-            new_bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, bullet_speed * -1f);
+            //new_bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, bullet_speed * -1f);
         }
     }
 
