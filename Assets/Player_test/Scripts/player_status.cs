@@ -7,6 +7,7 @@ public class player_status : MonoBehaviour, IDamagable
     public int hp = 500;
     public int energy = 0;
     public int max_energy = 100;
+    public int max_hp = 500;
     public void AddEnergy(int damage)
     {
         if (energy + damage >= max_energy)

@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class player_bullet_damage : MonoBehaviour
 {
+    public GameObject Player;
+    player_status script;
     private void Start()
     {
+        Player = GameObject.Find("Player"); //Playerをオブジェクトの名前から取得して変数に格納する
+        script = Player.GetComponent<player_status>();
     }
     // Update is called once per frame
     private int damage = 10;
@@ -27,7 +31,17 @@ public class player_bullet_damage : MonoBehaviour
             if (damagetarget != null)
             {
                 other.gameObject.GetComponent<EDmage>().AddDamage(damage);
-                
+                if (script.hp == script.max_hp)
+                {
+
+                }
+                else {
+                    script.hp += damage;
+
+                }
+               
+
+
             }
         }
     }
