@@ -8,8 +8,8 @@ public class enemy_move : MonoBehaviour
     private float move_timer = 0f;
     private float way = 0;
 
-    private float minimum_x = -8f;
-    private float max_x = 8f;
+    private float minimum_x = -20f;
+    private float max_x = 20f;
 
     private float right = 0f;
     private float left = 2f;

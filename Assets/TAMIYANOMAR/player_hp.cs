@@ -9,7 +9,11 @@ public class player_hp : MonoBehaviour
     public GameObject part2;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        hp--;
+        if (collision.tag == "Enemy")
+        {
+            hp--;
+        }
+
         if (hp <= 0)
         {
             this.gameObject.SetActive(false);

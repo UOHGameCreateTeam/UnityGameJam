@@ -7,11 +7,6 @@ public class player_shoot_bullet : MonoBehaviour
     public GameObject player_bullet;
     public GameObject player_muzle;
     private float bullet_speed = 20f;
-    void Start()
-    {
-        
-    }
-
 
     void Update()
     {
