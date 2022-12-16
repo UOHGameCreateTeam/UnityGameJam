@@ -9,6 +9,8 @@ public class enemy_bullet_behaib : MonoBehaviour
     public GameObject muzzle;
     public float bullet_speed = 10f;
     public string player_name = "Player";
+    public GameObject Enemy;
+    enemy_status enemy_hp;
     private float gap_x;
     private float gap_y;
     private float time = 0f;
@@ -16,13 +18,18 @@ public class enemy_bullet_behaib : MonoBehaviour
     private Vector2 vec;
     void Start()
     {
+
         player_obj = GameObject.Find(player_name);
+        enemy_hp = Enemy.GetComponent<enemy_status>();
     }
 
     void Update()
     {
         time += Time.deltaTime;
-
+        if (enemy_hp.hp <= 0)
+        {
+            this.enabled = false;
+        }
         if (time >= bullet_timer)
         {
             time = 0f;

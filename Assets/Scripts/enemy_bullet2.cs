@@ -8,6 +8,7 @@ public class enemy_bullet2 : MonoBehaviour
     public GameObject bullet3;
     public GameObject muzzle;
     public float bullet_speed = 10f;
+    enemy_status enemy_hp;
     private float time = 0f;
     public float bullet_timer = 0.5f;
     private float angle;
@@ -20,11 +21,18 @@ public class enemy_bullet2 : MonoBehaviour
         var radian = angle * (Mathf.PI / 180);
         return new Vector2(Mathf.Cos(radian), Mathf.Sin(radian)).normalized;
     }
+    void Start()
+    {
 
+        enemy_hp = Enemy.GetComponent<enemy_status>();
+    }
     // Update is called once per frame
     void Update()
     {
-        
+        if (enemy_hp.hp <= 0)
+        {
+            this.enabled = false;
+        }
         time += Time.deltaTime;
 
         if (time >= bullet_timer)

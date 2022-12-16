@@ -14,6 +14,9 @@ public class Pllayer_shoot : MonoBehaviour
     player_status script;
     public float bullet_sense = 0f;
     private float time = 0;
+    public AudioClip sound1;
+    public AudioClip sound2;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,7 @@ public class Pllayer_shoot : MonoBehaviour
         time = bullet_sense;
         Player = GameObject.Find("Player"); //Playerをオブジェクトの名前から取得して変数に格納する
         script = Player.GetComponent<player_status>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public static Vector2 AngleToVector2(float angle)
@@ -51,6 +55,7 @@ public class Pllayer_shoot : MonoBehaviour
                 GameObject new_bullet = Instantiate(player_beem, player.transform.position, transform.rotation);
                 new_bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, beem_speed);
                 script.energy = 0;
+                audioSource.PlayOneShot(sound2);
             }
         }
         if (Input.GetKey(KeyCode.Z))
@@ -60,6 +65,7 @@ public class Pllayer_shoot : MonoBehaviour
                 GameObject new_bullet = Instantiate(player_bullet, player.transform.position, transform.rotation);
                 new_bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, bullet_speed);
                 time = 0f;
+                audioSource.PlayOneShot(sound1);
             }
 
         }
