@@ -8,17 +8,21 @@ using UnityEngine.SceneManagement;
 public class time_limit_sc : MonoBehaviour
 {
     public TextMeshProUGUI time_left;
-    private static float  time_limit;
+    public float  time_limit = 200;
+    public GameObject player_score;
+    score_board script;
+
     // Start is called before the first frame update
     void Start()
     {
-        time_limit = 100;
-        float tmp = time_limit;
+        
         string show_text;
 
-         show_text = string.Format("{0}", tmp);
+         show_text = string.Format("{0}", time_limit);
          time_left.text = show_text;
-        
+         
+         script = player_score.GetComponent<score_board>();
+
     }
 
     // Update is called once per frame
@@ -34,7 +38,8 @@ public class time_limit_sc : MonoBehaviour
 
         if (tmp <= 0)
         {
-            SceneManager.LoadScene("result");
+            GetComponent<result_value_send>().enabled = true;
+            var a = new result_value_send();
         }
     }
 }

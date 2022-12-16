@@ -15,8 +15,7 @@ public class right_ar : MonoBehaviour
     }
     public void change()
     {
-        //int tmp = 0;
-        stage_dummy dummy;
+        
 
         tmp = stage_dummy.play_stage;
         if(tmp < 5)

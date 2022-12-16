@@ -21,14 +21,4 @@ public class weapon_type : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        string show_text;
-
-        weapon_dummy dum_1 = new weapon_dummy();
-        tmp = dum_1.GetSetProperty;
-
-        show_text = string.Format("{0}", tmp);
-        weapon.text = show_text;
-    }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class show_object : MonoBehaviour
 {
     public GameObject show_hp;
+    public GameObject show_enemy_hp;
     public GameObject show_enrgy;
     public GameObject show_panel;
     public GameObject show_select_wp;
@@ -17,6 +18,7 @@ public class show_object : MonoBehaviour
     void Start()
     {
         show_hp.SetActive(false);
+        show_enemy_hp.SetActive(false);
         show_enrgy.SetActive(false);
         show_select_wp.SetActive(false);
         show_time_limit.SetActive(false);
@@ -35,6 +37,7 @@ public class show_object : MonoBehaviour
         if (tmp >= 0)
         {
             show_hp.SetActive(true);
+            show_enemy_hp.SetActive(true);
             show_enrgy.SetActive(true);
             show_select_wp.SetActive(true);
             show_time_limit.SetActive(true);

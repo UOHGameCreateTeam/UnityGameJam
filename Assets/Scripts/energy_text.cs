@@ -22,12 +22,12 @@ public class energy_text : MonoBehaviour
     {
         if (script == null) // <- NULLチェックを行う。
         {
-            Debug.Log($"{name_player} has null player"); // <- ゲームオブジェクトの名前を記録する。
+            
             return; // <- この関数を終了します。
         }
         if (energyText == null)
         {
-            Debug.Log($"{name_hptext} has null ui"); // <- ゲームオブジェクトの名前を記録する。
+            
             return; // <- この関数を終了します。
         }
         energyText.text = script.energy.ToString();

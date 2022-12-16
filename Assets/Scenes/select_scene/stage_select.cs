@@ -7,7 +7,6 @@ using TMPro;
 public class stage_select : MonoBehaviour
 {
     // Start is called before the first frame update
-    private int tmp = 0;
 
     public TextMeshProUGUI now_stage;
 
@@ -29,7 +28,7 @@ public class stage_select : MonoBehaviour
         
         if(wp_count == 0)
         {
-            show_text = "チュートリアル";
+            show_text = "Tutorial";
         }
 
         now_stage.text = show_text;

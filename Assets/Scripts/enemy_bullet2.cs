@@ -33,7 +33,7 @@ public class enemy_bullet2 : MonoBehaviour
             for (int i = 0; i < count; i++)
             {
                 float angle = Random.Range(min_angle, max_angle);
-                GameObject new_bullet = Instantiate(bullet3, Enemy.transform.position, transform.rotation);
+                GameObject new_bullet = Instantiate(bullet3, muzzle.transform.position, transform.rotation);
                 var a = AngleToVector2(angle);
                 var angles = new_bullet.transform.localEulerAngles;
                 angles.z = angle + angle_change;

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9053775474733628408}
   - component: {fileID: 9053775474733628409}
+  - component: {fileID: 4228307685247428498}
   - component: {fileID: 9053775474733628386}
   - component: {fileID: 8426937382539816440}
   - component: {fileID: 9053775474733628389}
@@ -90,6 +91,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4228307685247428498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9053775474733628411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66536c7521c73df42a34b3abc0058e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameobject: {fileID: 0}
+  Score: {fileID: 0}
 --- !u!114 &9053775474733628386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +187,7 @@ MonoBehaviour:
   energy: 0
   max_energy: 1000
   max_hp: 500
+  player_score: {fileID: 0}
 --- !u!61 &9053775474733628390
 BoxCollider2D:
   m_ObjectHideFlags: 0

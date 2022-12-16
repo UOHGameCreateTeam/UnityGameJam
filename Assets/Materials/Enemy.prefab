@@ -72,8 +72,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7916207379071882896}
   - component: {fileID: 7916207379071882897}
+  - component: {fileID: 1196776742879191003}
   - component: {fileID: 7916207379071882895}
-  - component: {fileID: 7916207379071882898}
   - component: {fileID: 7916207379071882891}
   - component: {fileID: 7916207379071882888}
   - component: {fileID: 7916207379071882900}
@@ -164,6 +164,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1196776742879191003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916207379071882899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66536c7521c73df42a34b3abc0058e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameobject: {fileID: 0}
+  Score: {fileID: 0}
 --- !u!114 &7916207379071882895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,20 +195,6 @@ MonoBehaviour:
   bullet_speed: 2
   player_name: Player
   bullet_timer: 0.3
---- !u!114 &7916207379071882898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7916207379071882899}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 693c4791ba9c58e41be0240bdbe32e39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 5743124787871638257, guid: 147132da288165a40822006951c5b95d, type: 3}
-  muzzle: {fileID: 7916207379393098060}
 --- !u!114 &7916207379071882891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 5000
+  player_score: {fileID: 0}
+  gameobject: {fileID: 0}
 --- !u!114 &7916207379071882888
 MonoBehaviour:
   m_ObjectHideFlags: 0

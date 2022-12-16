@@ -5,7 +5,6 @@ using TMPro;
 
 public class weapon_selet : MonoBehaviour
 {
-    private int tmp = 0;
 
     public TextMeshProUGUI now_weapon;
 

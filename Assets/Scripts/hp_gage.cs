@@ -10,7 +10,6 @@ public class hp_gage : MonoBehaviour
     player_status script;
     void Start()
     {
-        Player = GameObject.Find("Player"); //Playerをオブジェクトの名前から取得して変数に格納する
         script = Player.GetComponent<player_status>();
         slider.value = script.hp;
     }

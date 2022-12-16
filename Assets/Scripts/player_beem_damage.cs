@@ -14,7 +14,7 @@ public class player_beem_damage : MonoBehaviour
         // 5•bŒã‚É©•ª‚ğíœ
         Destroy(this.gameObject, 5.0f);
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
 
         if (other.gameObject.CompareTag("Enemy"))
@@ -27,7 +27,8 @@ public class player_beem_damage : MonoBehaviour
             if (damagetarget != null)
             {
                 other.gameObject.GetComponent<EDmage>().AddDamage(damage);
-             
+                other.gameObject.GetComponent<EDmage>().AddScore(damage);
+
             }
         }
     }

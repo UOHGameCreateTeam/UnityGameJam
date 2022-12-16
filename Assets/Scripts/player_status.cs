@@ -9,6 +9,14 @@ public class player_status : MonoBehaviour, IDamagable
     public int energy = 0;
     public int max_energy = 100;
     public int max_hp = 500;
+    public GameObject player_score;
+    score_board script;
+
+    void Start()
+    {
+        //Playerをオブジェクトの名前から取得して変数に格納する
+        script = player_score.GetComponent<score_board>();
+    }
     public void AddEnergy(int damage)
     {
         if (energy + damage >= max_energy)
@@ -32,20 +40,25 @@ public class player_status : MonoBehaviour, IDamagable
             }
             
         }
-        Debug.Log("add: " + damage + "energy: " + energy);
+        
 
 
     }
     public void AddDamage(int damage)
     {
         hp -= damage;
-        Debug.Log("add: " + damage + "hp: " + hp);
 
         if (hp <= 0)
         {
             this.gameObject.SetActive(false);
-            SceneManager.LoadScene("result");
+            GetComponent<result_value_send>().enabled = true;
+            var a = new result_value_send();
         }
     }
-    
+
+    public void AddScore(int damage)
+    {
+        script.score += damage;
+    }
+
 }

@@ -23,7 +23,6 @@ public class player_bullet_damage : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log($"ED");
             // _attakTarget にセットされたオブジェクトから、IDamagable を呼ぶ
             var damagetarget = other.gameObject.GetComponent<EDmage>();
 
@@ -31,6 +30,7 @@ public class player_bullet_damage : MonoBehaviour
             if (damagetarget != null)
             {
                 other.gameObject.GetComponent<EDmage>().AddDamage(damage);
+                other.gameObject.GetComponent<EDmage>().AddScore(damage);
                 if (script.hp == script.max_hp)
                 {
 

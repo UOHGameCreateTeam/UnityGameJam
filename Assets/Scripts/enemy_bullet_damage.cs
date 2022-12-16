@@ -18,7 +18,6 @@ public class enemy_bullet_damage : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log($"rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
             // _attakTarget にセットされたオブジェクトから、IDamagable を呼ぶ
             var damagetarget = other.gameObject.GetComponent<IDamagable>();
 
@@ -27,6 +26,7 @@ public class enemy_bullet_damage : MonoBehaviour
             {
                 other.gameObject.GetComponent<IDamagable>().AddDamage(damage);
                 other.gameObject.GetComponent<IDamagable>().AddEnergy(damage);
+                other.gameObject.GetComponent<IDamagable>().AddScore(damage);
             }
             Destroy(this.gameObject);
         }
