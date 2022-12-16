@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bullet_rotate : MonoBehaviour
+namespace TAMIYANOMAR
 {
-    private float rotate_speed = 300;
-    void Update()
+    public class bullet_rotate : MonoBehaviour
     {
-        this.transform.eulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y, this.transform.eulerAngles.z + (rotate_speed * Time.deltaTime));
+        private float rotate_speed = 300;
+        void Update()
+        {
+            this.transform.eulerAngles = new Vector3(this.transform.eulerAngles.x, this.transform.eulerAngles.y, this.transform.eulerAngles.z + (rotate_speed * Time.deltaTime));
+        }
     }
 }

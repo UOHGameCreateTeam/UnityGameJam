@@ -2,20 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemy_bullet_behave : MonoBehaviour
+namespace TAMIYANOMAR
 {
-    private GameObject player_obj;
-    public string player_name = "Player";
-    private float gap_x;
-    void Start()
+    public class enemy_bullet_behave : MonoBehaviour
     {
-        player_obj = GameObject.Find(player_name);
-    }
+        private GameObject player_obj;
+        public string player_name = "Player";
+        private float gap_x;
+        void Start()
+        {
+            player_obj = GameObject.Find(player_name);
+        }
 
-    void Update()
-    {
-        gap_x = player_obj.transform.position.x - this.transform.position.x;
+        void Update()
+        {
+            gap_x = player_obj.transform.position.x - this.transform.position.x;
 
-        this.transform.position = new Vector2(this.transform.position.x + (gap_x * Time.deltaTime),this.transform.position.y);
+            this.transform.position = new Vector2(this.transform.position.x + (gap_x * Time.deltaTime), this.transform.position.y);
+        }
     }
 }

@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rotate_bullet_inActive : MonoBehaviour
+namespace TAMIYANOMAR
 {
-    private GameObject parent;
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class rotate_bullet_inActive : MonoBehaviour
     {
-        if (collision.tag == "Player")
+        private GameObject parent;
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            parent = transform.parent.gameObject;
-            parent.SetActive(false);
+            if (collision.tag == "Player")
+            {
+                parent = transform.parent.gameObject;
+                parent.SetActive(false);
+            }
         }
     }
 }

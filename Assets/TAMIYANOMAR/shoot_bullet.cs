@@ -2,25 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shoot_bullet : MonoBehaviour
+namespace TAMIYANOMAR
 {
-    public GameObject bullet;
-    public GameObject muzzle;
-    private float time = -1f;
-    public float bullet_speed = 10f;
-
-    void Update()
+    public class shoot_bullet : MonoBehaviour
     {
-        time += Time.deltaTime;
+        public GameObject bullet;
+        public GameObject muzzle;
+        private float time = -1f;
+        public float bullet_speed = 10f;
 
-
-        if(time >= 0.5f)
+        void Update()
         {
-            time = 0f;
-            GameObject new_bullet = Instantiate(bullet,muzzle.transform.position , transform.rotation);
-            if(bullet.name != "look_at_player_bullet")new_bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, bullet_speed * -1f);
-        }
-    }
+            time += Time.deltaTime;
 
-   
+
+            if (time >= 0.5f)
+            {
+                time = 0f;
+                GameObject new_bullet = Instantiate(bullet, muzzle.transform.position, transform.rotation);
+                if (bullet.name != "look_at_player_bullet") new_bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, bullet_speed * -1f);
+            }
+        }
+
+
+    }
 }

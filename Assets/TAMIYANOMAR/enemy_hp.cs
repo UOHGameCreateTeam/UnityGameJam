@@ -2,30 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemy_hp : MonoBehaviour
+namespace TAMIYANOMAR
 {
-    private int hp = 3;
-    public GameObject part1;
-    public GameObject part2;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class enemy_hp : MonoBehaviour
     {
-        if (collision.tag == "Player")
-        {
-            hp--;
-        }
+        private int hp = 3;
+        public GameObject part1;
+        public GameObject part2;
 
-        if (hp <= 0)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            this.gameObject.SetActive(false);
-        }
-        if(hp <= 2)
-        {
-            part1.SetActive(false);
-        }
-        if(hp <= 1)
-        {
-            part2.SetActive(false);
+            if (collision.tag == "Player")
+            {
+                hp--;
+            }
+
+            if (hp <= 0)
+            {
+                this.gameObject.SetActive(false);
+            }
+            if (hp <= 2)
+            {
+                part1.SetActive(false);
+            }
+            if (hp <= 1)
+            {
+                part2.SetActive(false);
+            }
         }
     }
 }
