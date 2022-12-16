@@ -266,7 +266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 385935485}
-  - component: {fileID: 385935484}
+  - component: {fileID: 385935486}
   m_Layer: 0
   m_Name: weapon_dummy
   m_TagString: Untagged
@@ -274,18 +274,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &385935484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 385935483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 960c517c4f747dc4fbe6cff6c18ff18f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &385935485
 Transform:
   m_ObjectHideFlags: 0
@@ -301,6 +289,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &385935486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385935483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b81ee064803e046baee0d42611df33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &392751826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,7 +1625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a55fb065f34b3409b8ed939201b1b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  now_stage: {fileID: 0}
+  now_stage: {fileID: 1195366655}
 --- !u!1 &1220429903
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,7 +2085,7 @@ GameObject:
   - component: {fileID: 1700500949}
   - component: {fileID: 1700500948}
   m_Layer: 5
-  m_Name: stage_name
+  m_Name: stage_name_word
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2354,6 +2354,7 @@ GameObject:
   - component: {fileID: 2059478596}
   - component: {fileID: 2059478599}
   - component: {fileID: 2059478598}
+  - component: {fileID: 2059478600}
   - component: {fileID: 2059478597}
   m_Layer: 5
   m_Name: Button
@@ -2477,6 +2478,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059478595}
   m_CullTransparentMesh: 1
+--- !u!114 &2059478600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059478595}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a5e0c475b2c99438a476476fb4bc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 385935483}
+  stage: {fileID: 1404169548}
 --- !u!1 &2083540252
 GameObject:
   m_ObjectHideFlags: 0

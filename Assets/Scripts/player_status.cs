@@ -12,6 +12,7 @@ public class player_status : MonoBehaviour, IDamagable
     public GameObject player_score;
     score_board script;
 
+    public bool charged = false;
     void Start()
     {
         //Playerをオブジェクトの名前から取得して変数に格納する
@@ -21,11 +22,14 @@ public class player_status : MonoBehaviour, IDamagable
     {
         if (energy + damage >= max_energy)
         {
+            charged = true;
             energy = max_energy;
             Debug.Log("MAX");
         }
         else
         {
+            charged = false;
+
             if (hp <= max_hp / 3 * 2)
             {
                 energy += damage * 4;

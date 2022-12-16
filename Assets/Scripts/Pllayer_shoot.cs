@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Pllayer_shoot : MonoBehaviour
 {
-    private GameObject player;
     public GameObject player_bullet;
     public GameObject player_beem;
     public float bullet_speed = 3f;
@@ -41,7 +40,7 @@ public class Pllayer_shoot : MonoBehaviour
         {
             Debug.Log($"{transform.rotation}");
             Debug.Log($"{transform.rotation}");
-            GameObject new_bullet = Instantiate(player_bullet, player.transform.position, transform.rotation);
+            GameObject new_bullet = Instantiate(player_bullet, Player.transform.position, transform.rotation);
             var a = AngleToVector2(angle);
             var angles = new_bullet.transform.localEulerAngles;
             angles.z = angle - 90f;
@@ -52,7 +51,8 @@ public class Pllayer_shoot : MonoBehaviour
         {
             if(script.energy == script.max_energy)
             {
-                GameObject new_bullet = Instantiate(player_beem, player.transform.position, transform.rotation);
+                Debug.Log($"X");
+                GameObject new_bullet = Instantiate(player_beem, Player.transform.position, transform.rotation);
                 new_bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, beem_speed);
                 script.energy = 0;
                 audioSource.PlayOneShot(sound2);
@@ -62,7 +62,8 @@ public class Pllayer_shoot : MonoBehaviour
         {
             if (time >= bullet_sense)
             {
-                GameObject new_bullet = Instantiate(player_bullet, player.transform.position, transform.rotation);
+                Debug.Log($"Z");
+                GameObject new_bullet = Instantiate(player_bullet, Player.transform.position, transform.rotation);
                 new_bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, bullet_speed);
                 time = 0f;
                 audioSource.PlayOneShot(sound1);
