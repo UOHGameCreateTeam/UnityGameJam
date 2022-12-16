@@ -43,4 +43,12 @@ public class look_at_and_go : MonoBehaviour
             this.transform.position += velocity * Time.deltaTime;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
 }

@@ -35,7 +35,6 @@ namespace TAMIYANOMAR
             var minTargetDistance = float.MaxValue;
             foreach (var target in targets)
             {
-                Debug.Log(target.name);
                 var targetDistance = Vector2.Distance(transform.position, target.transform.position);
                 if (!(targetDistance < minTargetDistance)) continue;
                 minTargetDistance = targetDistance;
@@ -46,7 +45,6 @@ namespace TAMIYANOMAR
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("SetActiveFalse");
             Destroy(this.gameObject);
         }
     }
