@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pllayer_shoot : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
     public GameObject player_bullet;
     public GameObject player_beem;
     public float bullet_speed = 3f;
