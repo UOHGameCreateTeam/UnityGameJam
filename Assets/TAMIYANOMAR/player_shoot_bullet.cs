@@ -8,12 +8,20 @@ public class player_shoot_bullet : MonoBehaviour
     public GameObject player_muzle;
     private float bullet_speed = 20f;
 
+    static private float timer_max = 0.05f;
+    private float timer = timer_max;
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        timer -= Time.deltaTime;
+        if(Input.GetKey(KeyCode.Mouse0))
         {
-            GameObject new_bullet = Instantiate(player_bullet, player_muzle.transform.position, transform.rotation);
-            new_bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, bullet_speed * 1f);
+            if(timer < 0)
+            {
+                timer = timer_max;
+                GameObject new_bullet = Instantiate(player_bullet, player_muzle.transform.position, transform.rotation);
+                new_bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, bullet_speed * 1f);
+            }
+            
         }
     }
 }

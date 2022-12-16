@@ -16,9 +16,7 @@ public class look_at_and_go : MonoBehaviour
         player_obj = GameObject.Find(player_name);
 
         float gap_x = player_obj.transform.position.x - this.transform.position.x;
-        Debug.Log(gap_x);
         float gap_y = player_obj.transform.position.y - this.transform.position.y;
-        Debug.Log(gap_y);
 
         if (gap_x < 0)
         {
@@ -28,7 +26,6 @@ public class look_at_and_go : MonoBehaviour
         {
             angle_gap = 180 - Mathf.Rad2Deg * Mathf.Atan(-1*gap_y/gap_x);
         }
-        Debug.Log(angle_gap);
     }
 
     // Update is called once per frame
