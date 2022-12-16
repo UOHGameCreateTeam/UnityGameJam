@@ -7,6 +7,13 @@ public class left_ar : MonoBehaviour
 {
     // Start is called before the first frame update
     private int tmp = 0;
+    public GameObject stage;
+    stage_dummy script;
+
+    void Start()
+    {
+        script = stage.GetComponent<stage_dummy>();
+    }
     public void OnClisk()
     {
         print("left");
@@ -18,10 +25,10 @@ public class left_ar : MonoBehaviour
         //int tmp = 0;
 
  
-        tmp = stage_dummy.play_stage;
+        tmp = script.play_stage;
         if(tmp >= 0)
         {
-            stage_dummy.play_stage -= 1;
+            script.play_stage -= 1;
         }
 
         

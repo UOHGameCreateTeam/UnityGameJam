@@ -5,6 +5,13 @@ using UnityEngine;
 public class wp_right : MonoBehaviour
 {
     private int tmp = 0;
+    public GameObject weapon_dum;
+    weapon_dummy script;
+
+    void Start()
+    {
+        script = weapon_dum.GetComponent<weapon_dummy>();
+    }
     // Start is called before the first frame update
     public void OnClick()
     {
@@ -17,10 +24,10 @@ public class wp_right : MonoBehaviour
         //int tmp = 0;
 
 
-        tmp = weapon_dummy.use_weapon;
+        tmp = script.use_weapon;
         if (tmp < 8)
         {
-            weapon_dummy.use_weapon += 1;
+            script.use_weapon += 1;
         }
 
 

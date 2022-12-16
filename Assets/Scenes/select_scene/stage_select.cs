@@ -9,10 +9,13 @@ public class stage_select : MonoBehaviour
     // Start is called before the first frame update
 
     public TextMeshProUGUI now_stage;
+    public GameObject stage;
+    stage_dummy script;
 
     void Start()
     {
         now_stage = GetComponent<TextMeshProUGUI>();
+        script = stage.GetComponent<stage_dummy>();
     }
 
     void Update()
@@ -20,7 +23,7 @@ public class stage_select : MonoBehaviour
         int wp_count = 0;
         string show_text;
 
-        wp_count = stage_dummy.play_stage;
+        wp_count = script.play_stage;
 
         show_text = string.Format("{0}", wp_count);
         //Debug.Log(wp_count);

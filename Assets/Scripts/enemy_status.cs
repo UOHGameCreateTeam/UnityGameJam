@@ -52,7 +52,6 @@ public class enemy_status : MonoBehaviour, EDmage
             {
                 this.gameObject.SetActive(false);
                 GetComponent<result_value_send>().enabled = true;
-                var a = new result_value_send();
             }
             time += Time.deltaTime;
         }

@@ -8,9 +8,8 @@ public class energy_text : MonoBehaviour
     public GameObject Player;
     player_status script;
     public TMP_Text energyText;
-    private string name_player = "Player";
-    private string name_hptext = "hpText";
     // Start is called before the first frame update
+
     void Start()
     {
         Player = GameObject.Find("Player"); //Playerをオブジェクトの名前から取得して変数に格納する

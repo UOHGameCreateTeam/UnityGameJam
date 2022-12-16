@@ -5,7 +5,7 @@ using UnityEngine;
 public class stage_dummy : MonoBehaviour
 {
 
-    public static int play_stage = 0;
+    public int play_stage = 0;
     // Start is called before the first frame update
     void Start()
     {

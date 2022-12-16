@@ -52,7 +52,6 @@ public class player_status : MonoBehaviour, IDamagable
         {
             this.gameObject.SetActive(false);
             GetComponent<result_value_send>().enabled = true;
-            var a = new result_value_send();
         }
     }
 

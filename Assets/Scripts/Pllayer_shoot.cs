@@ -14,6 +14,8 @@ public class Pllayer_shoot : MonoBehaviour
     player_status script;
     public float bullet_sense = 0f;
     private float time = 0;
+    public int weapon_number = 1;
+    public int select_weapon_number;
     public AudioClip sound1;
     public AudioClip sound2;
     AudioSource audioSource;
